@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UI Color Picker &mdash; CKEditor Sample</title>
+	<meta charset="utf-8">
+	<script src="ckeditor.js"></script>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" href="sample.css">
+	<!-- 
+	<script src="config.js"></script>
+	-->
+</head>
+<body>
+	<form id="form1" action="get" >
+	<textarea cols="80" id="editor1" name="editor1" rows="10">abc</textarea>
+	<script>
+		 CKEDITOR.replace( 'editor1',
+         {
+             toolbar : "Empty"
+         }
+    );
+	/*
+			   toolbar :
+				[
+			//加粗     斜体，     下划线      穿过线      下标字        上标字
+							['Bold','Italic','Underline','Strike','Subscript','Superscript'],
+			// 数字列表          实体列表            减小缩进    增大缩进
+							['NumberedList','BulletedList','-','Outdent','Indent'],
+			//左对齐             居中对齐          右对齐          两端对齐
+							['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+			//超链接  取消超链接 锚点
+							['Link','Unlink','Anchor'],
+			//图片    flash    表格       水平线            表情       特殊字符        分页符
+							['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+			'/',
+			// 样式       格式      字体    字体大小
+							['Styles','Format','Font','FontSize'],
+			//文本颜色     背景颜色
+							['TextColor','BGColor'],
+			//全屏           显示区块
+							['Maximize', 'ShowBlocks','-']
+             ]
+         }
+	*/
+
+
+	  toolbar :[['Bold','Italic','Underline','Strike','Subscript','Superscript']]
+
+
+
+	</script>
+	<input type="button" value="ok" onclick="alert(document.getElementById('editor1').value);" />	
+	<input type="button" value="test" onclick="test();" />
+	<input type="button" value="test1" onclick="test1();" />
+	</form>
+	<script>
+
+		function test() {
+            for (instance in CKEDITOR.instances)
+               CKEDITOR.instances[instance].updateElement();
+				   // alert( CKEDITOR.instances.editor1.getData() );
+		}
+
+		function test1() {
+
+			
+
+			// CKEDITOR.instances["editor1"].setData( '<p>Hello world!</p>' );
+		// 	CKEDITOR.instances["editor1"].setReadOnly( true );
+
+			// editor.destroy();
+			// editor.insertHtml( value );
+			// editor.insertText( value );
+			// editor.setData( value );
+			// editor.getData()
+			// CKEDITOR.instances.editor1.focus();
+
+			// CheckDirty
+			// editor.resetDirty();
+			// editor.setReadOnly( isReadOnly );
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+*.jar
+*.class
+
+/src/com/lab516/web/templates/function.ftl
+
+/.settings
+/build
+
+.classpath
+.project

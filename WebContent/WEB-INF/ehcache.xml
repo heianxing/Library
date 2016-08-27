@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="es">
+
+	<diskStore path="java.io.tmpdir" />
+	
+	<!-- 
+		timeToLive
+			The maximum number of seconds an element can exist in the cache regardless of use. 
+			The default value is 0, which means no timeToLive (TTL) eviction takes place (infinite lifetime).
+
+		timeToIdle
+			The maximum number of seconds an element can exist in the cache without being accessed. 
+			The default value is 0, which means no timeToIdle (TTI) eviction takes place (infinite lifetime).
+		
+		eternal
+			when set to "true", overrides timeToLive and timeToIdle so that no expiration can take place. 
+		
+		Local sizing attributes maxEntriesLocalHeap, maxBytesLocalHeap, maxEntriesLocalDisk, maxBytesLocalDisk.
+
+		CacheEventListeners can be added and removed dynamically
+    -->
+
+	<defaultCache maxEntriesLocalHeap="1000" eternal="false"
+		timeToIdleSeconds="3600" timeToLiveSeconds="3600" overflowToDisk="false">
+	</defaultCache>
+
+	<cache name="dictionaryCache" maxEntriesLocalHeap="2000" eternal="false"
+		timeToIdleSeconds="600" timeToLiveSeconds="600" overflowToDisk="false"
+		statistics="true">
+	</cache>
+	
+	<cache name="configCache" maxEntriesLocalHeap="2000" eternal="false"
+		timeToIdleSeconds="600" timeToLiveSeconds="600" overflowToDisk="false"
+		statistics="true">
+	</cache>
+	
+	<cache name="consultationCache" maxEntriesLocalHeap="2000" eternal="false"
+		timeToIdleSeconds="600" timeToLiveSeconds="600" overflowToDisk="false"
+		statistics="true">
+	</cache>
+
+</ehcache>
+

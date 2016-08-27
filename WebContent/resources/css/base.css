@@ -1,0 +1,144 @@
+.grid {
+	table-layout: fixed;
+	border-collapse: collapse;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	margin-top: 5px;
+	width: 100px;
+}
+
+.grid>tbody>tr {
+	height: 25px;
+}
+
+.grid td {
+	border: 1px solid #ccc;
+	padding: 0px 3px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.grid>tbody>tr:hover {
+	background: #d5effc url(../images/grid/hl.png) repeat-x top;
+}
+
+.grid>tbody>tr:first-child {
+	background: #d5effc url(../images/grid/wbg.gif) repeat-x top;
+	text-align: center;
+	font-family: "Microsoft YaHei";
+}
+
+.grid>tbody>tr:first-child:hover {
+	
+}
+
+.grid>tbody>tr>td:first-child {
+	text-align: center;
+}
+
+.repeater {
+	position: relative;
+	width: 250px;
+}
+
+.repeater td {
+	border: 0px;
+	position: relative;
+	width: 80px;
+	top: 10px;
+	padding-right: 5px;
+}
+
+.repeater label {
+	margin-right: 15px;
+}
+
+.pager {
+	background: #d5effc url(../images/grid/wbg.gif) repeat-x top;
+	height: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 25px;
+	width: 900px;
+	margin: 0px;
+}
+
+.pager div {
+	display: inline;
+}
+
+.pager .left {
+	float: left;
+	margin-left: 10px;
+}
+
+.pager .right {
+	float: right;
+	text-align: right;
+	margin-right: 10px;
+	width: 70%;
+	margin-right: 10px;
+}
+
+.pager span {
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #fff;
+	margin: 3px;
+}
+
+.pager image {
+	width: 18px;
+	height: 18px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.pager input {
+	width: 20px !important;
+	height: 17px;
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: 2px;
+}
+
+.palette {
+	font-weight: bold;
+	text-align: center;
+}
+
+.palette select {
+	width: 100%
+}
+
+.palette input[type='button'] {
+	width: 34px;
+	height: 29px;
+	margin-top: 8px;
+}
+
+.hideable {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.mask {
+	position: absolute;
+	z-index: 1100;
+	opacity: 0.9;
+	background-color: #5F5F5F;
+	cursor: wait;
+}
+
+.mask>div {
+	position: absolute;
+	z-index: 1200;
+	opacity: 1;
+	line-height: 24px;
+	border: #AAAAAA 5px solid;
+	padding: 5px 5px 5px 35px;
+	font-size: 25px;
+	font-weight: bold;
+	background: #ffffff url(../images/loading.gif) no-repeat left;
+}

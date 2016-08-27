@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util-3.2.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+    http://www.springframework.org/schema/cache
+    http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <context:component-scan base-package="com.lab516.base" />
+    <context:component-scan base-package="com.lab516.service" />
+    <context:component-scan base-package="com.lab516.support.security" />
+
+	<context:annotation-config/>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" >
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/library_system?characterEncoding=utf8" />
+		<property name="username" value="root" />
+		<property name="password" value="123456" />
+		<!--
+		<property name="password" value="lacom159753" />
+		-->
+	</bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+   		<property name="dataSource" ref="dataSource" />
+        <property name="persistenceXmlLocation" value="/WEB-INF/persistence.xml" />
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    <!-- JPA  end  -->
+
+    <!-- ecache start -->
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+    	<property name="cacheManager" >
+    		<bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" >
+				<property name="configLocation" value="/WEB-INF/ehcache.xml" />
+			</bean>
+    	</property>
+    	<!-- 如果事务回滚，缓存也回滚 -->
+    	<property name="transactionAware" value="true"/>
+	</bean>
+
+	<cache:annotation-driven />
+    <!-- ecache end   -->
+
+    <!-- shiro start  -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+
+    <bean id="filterChainManager" class="com.lab516.support.security.CustomDefaultFilterChainManager">
+	    <property name="loginUrl" value="/login.do"/>
+	    <property name="successUrl" value="/home.do"/>
+	    <property name="unauthorizedUrl" value="/unauthorized.do"/>
+	    <property name="kickoutFilter" ref="kickoutFilter" />
+	</bean>
+	
+	<bean id="kickoutFilter" class="com.lab516.support.security.KickoutSessionControlFilter" >
+		<property name="kickoutUrl" value="/login.do" />
+		<property name="homeUrl" value="/home.do" />
+	</bean>
+    
+	<!-- 注册相应的拦截器及默认的拦截器链    -->
+	<bean id="filterChainResolver" class="com.lab516.support.security.CustomPathMatchingFilterChainResolver" >
+        <property name="customDefaultFilterChainManager" ref="filterChainManager" />
+    </bean>
+    
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager" >
+		<property name="realm" ref="shiroRealm" />
+	</bean>
+
+	<!-- shiroFilter不再定义filters及filterChainDefinitions，而是交给了filterChainManager进行完成。  -->
+	<bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean" >
+        <property name="targetObject" ref="shiroFilter" />
+        <property name="targetMethod" value="setFilterChainResolver" />
+        <property name="arguments" ref="filterChainResolver" />
+    </bean>
+
+	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+
+	<!-- 以下两个Bean开启注解方法级权限检查 -->
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+		depends-on="lifecycleBeanPostProcessor">
+		<property name="proxyTargetClass" value="true" />
+	</bean>
+
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+	<!-- shiro end    -->
+	
+</beans>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util-3.2.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+    http://www.springframework.org/schema/cache
+    http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <context:component-scan base-package="com.lab516.web" />
+
+    <mvc:annotation-driven conversion-service="conversionService" >
+    	<mvc:argument-resolvers>
+	        <bean class="com.lab516.support.resolver.EntityArgumentResolver" />
+	        <bean class="com.lab516.support.resolver.EntityArrayArgumentResolver" />
+	       	<bean class="com.lab516.support.resolver.EhWebRequestResolver" />   
+	      	<bean class="com.lab516.support.resolver.EhModelMapResolver" />
+	    </mvc:argument-resolvers>
+		<mvc:message-converters register-defaults="true">
+			<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+		    	<constructor-arg value="UTF-8" />
+			</bean>											     
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="prettyPrint" value="true"/>
+            </bean>
+  		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="com.lab516.support.conveter.StringToDateConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+	    <property name="freemarkerSettings">
+			<props>
+		    	<prop key="tag_syntax">auto_detect</prop>
+   		      	<prop key="template_update_delay">100000000</prop>
+   		      	<prop key="default_encoding">UTF-8</prop>
+   		      	<prop key="output_encoding">UTF-8</prop>
+   		      	<prop key="url_escaping_charset">UTF-8</prop>
+   		      	<prop key="locale">zh_CN</prop>
+   		      	<prop key="date_format">yyyy-MM-dd</prop>
+   		      	<prop key="time_format">HH:mm:ss</prop>
+   		      	<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+   		      	<prop key="number_format">0.###############</prop>
+   		      	<prop key="classic_compatible">true</prop>
+   		      	<prop key="auto_include">templates/function.ftl,templates/page.ftl,templates/form.ftl</prop>
+			</props>
+		</property>
+	    <property name="templateLoaderPath">
+	        <value>classpath:com/lab516/web/</value>
+	    </property>
+	    <property name="freemarkerVariables">
+	        <map>
+	        	<entry key="xml_escape" >
+	        		<bean class="freemarker.template.utility.XmlEscape" />
+	        	</entry>
+	        </map>
+	    </property>
+	</bean>
+	
+	<!-- 文件上传支持,设置最大上传文件大小 ,5M=5*1024*1024(B)=5242800 bytes, id="multipartResolver"必须有 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <property name="maxUploadSize" value="100000000000" />  
+        <property name="uploadTempDir" value="resources" />   
+        <property name="resolveLazily" value="true"/>    
+    </bean>
+
+	<bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+	    <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+	    <property name="viewNames" value="*.ftl,.html"/>
+	    <property name="contentType" value="text/html; charset=utf-8"/>
+	    <property name="cache" value="true" />
+	    <property name="requestContextAttribute" value="rc"/>
+	</bean>
+
+	<!-- 如果没有这个redirect:xxx.do将无法被解析 -->
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="suffix" value=".do" />
+	    <property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView"/>
+	</bean>
+
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	    <property name="exceptionAttribute" value="ex" />
+	    <property name="exceptionMappings">
+	        <props>
+	            <prop key="com.lab516.support.exception.LoginTimeoutException" >/login.do</prop>
+	            <prop key="java.lang.Exception" >/exceptionhandler.do</prop>
+	        </props>
+	    </property>
+	    <property name="warnLogCategory" value="DEBUG" />
+    </bean>
+    
+    <mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.lab516.support.interceptor.ViewNameInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	    
+</beans>
