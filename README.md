@@ -157,18 +157,10 @@ Boostrap、jQuery、Freemarker、Spring MVC、JPA、Shiro、Ehcache
 # 对他人成果的借鉴和使用
 安全模块大体都来自张开涛先生的《跟我学shiro》代码
 
-页面布局风格参照JEESITE
+页面布局风格参照JEESITE，部分页面风格参照`Boostrap`官网模板
 
 分页`Grid`中的贴图来自某`JS`框架，年代久远，实在忘了
 
 # 截图
 
 ![扫码下载](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/home.png)
-
- 
- 
- 
-
- 
-
-
