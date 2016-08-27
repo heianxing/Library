@@ -1,45 +1,47 @@
-# ËµÃ÷
+# è¯´æ˜
 
-ÕâÊÇÒ»Ì×ÎÒ´î½¨µÄÈ«Õ»Ê½¿ò¼ÜµÄ**²¿·Ö**Ô´Âë£¬ÎªÁËÕÒ¹¤×÷µÄÊ±ºò¸øÕĞÆ¸ÈËÔ±¿´ÏÂ£¬¹ı¶ÎÊ±¼ä»á**É¾È¥**
-×÷ÎªÑİÊ¾ÎÒÖÆ×÷ÁËÒ»¸ö¼òµ¥µÄÍ¼Êé¹İ¹ÜÀíÏµÍ³£¬µ«ÊÇÇë**²»ÒªĞŞ¸ÄÏµÍ³Ä£¿éÅäÖÃ**
-ÑİÊ¾µØÖ·Çë²Î¼ûÎÒµÄ¼òÀú£¬×é¼şËµÃ÷Çëµ¥»÷ÏµÍ³ÉÏ·½**¿ò¼ÜÊ¾Àı**
+è¿™æ˜¯ä¸€å¥—æˆ‘æ­å»ºçš„å…¨æ ˆå¼æ¡†æ¶çš„**éƒ¨åˆ†**æºç ï¼Œä¸ºäº†æ‰¾å·¥ä½œçš„æ—¶å€™ä½¿ç”¨ï¼Œè¿‡æ®µæ—¶é—´ä¼š**åˆ å»**
 
-# ¿ò¼Ü½éÉÜ
-1. ÎüÊÕÁËTapestryºÍSpring MVCµÄÓÅµã£¬·â×°ÁË´óÁ¿×é¼ş
-2. ÖØĞ´ÁËÊı¾İĞ£Ñé£¬Ê¹Ç°ºó¶ËÑéÖ¤Í³Ò»
-3. ÖØĞ´ÁËÊı¾İ×ª»¯ºÍÊı¾İ°ó¶¨
-4. ÊµÏÖÁË°²È«»úÖÆ£ºµ¥µãµÇÂ¼ºÍÈ«ÏØÀ¹½Ø
-5. ÊµÏÖÁËÏµÍ³Ä£¿é£ºÓÃ»§¡¢½ÇÉ«¡¢²Ëµ¥¡¢ÅäÖÃ¡¢×Öµä...
+ä½œä¸ºæ¼”ç¤ºæˆ‘åˆ¶ä½œäº†ä¸€ä¸ªç®€å•çš„å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿï¼Œä½†æ˜¯è¯·**ä¸è¦ä¿®æ”¹ç³»ç»Ÿæ¨¡å—é…ç½®**
 
-# ËµÃ÷
+æ¼”ç¤ºåœ°å€è¯·å‚è§æˆ‘çš„ç®€å†ï¼Œç»„ä»¶è¯´æ˜è¯·å•å‡»ä¸»é¡µä¸Šæ–¹**æ¡†æ¶ç¤ºä¾‹**
 
-## Ç°¶Ë
-`Tapestry`ÊÇÒ»¸öÇ°¶ËÇ¿´ó×é¼şÊ½¿ò¼Ü£¬ºËĞÄË¼ÏëÊÇ×é¼şºÍÊÂ¼ş
-`Spring MVC`ÊÇ×îÇ°×î»ğÈÈµÄÇ°¶ËÇëÇóÏìÓ¦Ê½¿ò¼Ü
+# æ¡†æ¶ä»‹ç»
+1. å¸æ”¶äº†Tapestryå’ŒSpring MVCçš„ä¼˜ç‚¹ï¼Œå°è£…äº†å¤§é‡ç»„ä»¶
+2. é‡å†™äº†æ•°æ®æ ¡éªŒï¼Œä½¿å‰åç«¯éªŒè¯ç»Ÿä¸€
+3. é‡å†™äº†æ•°æ®è½¬åŒ–å’Œæ•°æ®ç»‘å®š
+4. å®ç°äº†å®‰å…¨æœºåˆ¶ï¼šå•ç‚¹ç™»å½•å’Œå…¨å¿æ‹¦æˆª
+5. å®ç°äº†ç³»ç»Ÿæ¨¡å—ï¼šç”¨æˆ·ã€è§’è‰²ã€èœå•ã€é…ç½®ã€å­—å…¸...
 
-<br/>
+# è¯´æ˜
 
-ÎÒÇ°¶ËµÄÉè¼ÆË¼Ïë¾ÍÊÇ½áºÏ¶şÕßÓÅµã£¬»ùÓÚ`Freemarker`·â×°ÁËºÜ¶à×é¼ş£¬
-²¢ÇÒÖØĞ´ÁËÊı¾İÑéÖ¤ºÍ·â×°£¬Ä¿µÄÊÇ£º**ÓÃ¾¡Á¿ÉÙµÄ´úÂë¸É¸ü¶àµÄÊÂ**
+## å‰ç«¯
+`Tapestry`æ˜¯ä¸€ä¸ªå‰ç«¯å¼ºå¤§ç»„ä»¶å¼æ¡†æ¶ï¼Œæ ¸å¿ƒæ€æƒ³æ˜¯ç»„ä»¶å’Œäº‹ä»¶
+`Spring MVC`æ˜¯æœ€å‰æœ€ç«çƒ­çš„å‰ç«¯è¯·æ±‚å“åº”å¼æ¡†æ¶
 
 <br/>
 
-²¿·Ö×é¼şÊ¹ÓÃÔ´ÂëºÍĞ§¹ûÈçÏÂ£º
-
-![É¨ÂëÏÂÔØ](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/component.png)
-
-
-## Êı¾İÑéÖ¤ºÍ·â×°
-ÑéÖ¤·ÖÎªÇ°¶Ë`JS`ÑéÖ¤ºÍºó¶Ë`Java`ÑéÖ¤
-Ò»°ãÇ°¶ËÑéÖ¤ÓÃ`jquery validate`£¬ºó¶ËÑéÖ¤ÓÃ`Hiberntae`µÄ×¢½âÀ´ÊµÏÖ
+æˆ‘å‰ç«¯çš„è®¾è®¡æ€æƒ³å°±æ˜¯ç»“åˆäºŒè€…ä¼˜ç‚¹ï¼ŒåŸºäº`Freemarker`å°è£…äº†å¾ˆå¤šç»„ä»¶ï¼Œ
+å¹¶ä¸”é‡å†™äº†æ•°æ®éªŒè¯å’Œå°è£…ï¼Œç›®çš„æ˜¯ï¼š**ç”¨å°½é‡å°‘çš„ä»£ç å¹²æ›´å¤šçš„äº‹**
 
 <br/>
 
-ËäÈ»±íµ¥µÄÑéÖ¤¹æÔò¶¼ÏàÍ¬£¬µ«ÊÇÈÔÈ»ÒªĞ´Á½±é£¬ÎÒµÄÄ¿µÄÊÇ£º**Ê¹Ç°¶ËºÍºó¶ËÑéÖ¤¶şÕßÍ³Ò»£¬Ö»ÓÃÔÚÊµÌåÉÏÅäÖÃ×¢½â£¬Ôò¿ò¼Ü×Ô¶¯È¥Ö´ĞĞÇ°¶ËºÍºó¶ËĞ£Ñé**
+éƒ¨åˆ†ç»„ä»¶ä½¿ç”¨æºç å’Œæ•ˆæœå¦‚ä¸‹ï¼š
+
+![æ‰«ç ä¸‹è½½](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/component.png)
+
+
+## æ•°æ®éªŒè¯å’Œå°è£…
+éªŒè¯åˆ†ä¸ºå‰ç«¯`JS`éªŒè¯å’Œåç«¯`Java`éªŒè¯
+ä¸€èˆ¬å‰ç«¯éªŒè¯ç”¨`jquery validate`ï¼Œåç«¯éªŒè¯ç”¨`Hiberntae`çš„æ³¨è§£æ¥å®ç°
 
 <br/>
 
-´úÂëÈçÏÂ:
+è™½ç„¶è¡¨å•çš„éªŒè¯è§„åˆ™éƒ½ç›¸åŒï¼Œä½†æ˜¯ä»ç„¶è¦å†™ä¸¤éï¼Œæˆ‘çš„ç›®çš„æ˜¯ï¼š**ä½¿å‰ç«¯å’Œåç«¯éªŒè¯äºŒè€…ç»Ÿä¸€ï¼Œåªç”¨åœ¨å®ä½“ä¸Šé…ç½®æ³¨è§£ï¼Œåˆ™æ¡†æ¶è‡ªåŠ¨å»æ‰§è¡Œå‰ç«¯å’Œåç«¯æ ¡éªŒ**
+
+<br/>
+
+ä»£ç å¦‚ä¸‹:
 ```
 @Entity
 @Table(name = "a_student")
@@ -48,12 +50,12 @@ public class Student extends BaseEntity {
 	@Id
 	@Require
 	@StrLen(maxLen = 40)
-	@FieldTipName("Ñ§Éú±àºÅ")
+	@FieldTipName("å­¦ç”Ÿç¼–å·")
 	private String stu_id;
 
 	@Require
 	@StrLen(maxLen = 40)
-	@FieldTipName("Ñ§ÉúĞÕÃû")
+	@FieldTipName("å­¦ç”Ÿå§“å")
 	private String stu_name;
 	
 	...
@@ -61,8 +63,8 @@ public class Student extends BaseEntity {
 ```
 ```
 @RequestMapping(value = ADD, method = RequestMethod.POST)
-public String onSubmit(EhWebRequest req, Student student) { // ×Ô¶¯·â×°³ÉÊµÌå
-	if (req.hasBindErrors()) { // Ö´ĞĞµ½´Ë´¦ºóÌ¨Ğ£ÑéÒÑ¾­Íê±Ï£¬²é¿´ÊÇ·ñÓĞ´íÎó
+public String onSubmit(EhWebRequest req, Student student) { // è‡ªåŠ¨å°è£…æˆå®ä½“
+	if (req.hasBindErrors()) { // æ‰§è¡Œåˆ°æ­¤å¤„åå°æ ¡éªŒå·²ç»å®Œæ¯•ï¼ŒæŸ¥çœ‹æ˜¯å¦æœ‰é”™è¯¯
 		return FM_FTL;
 	}
 
@@ -72,20 +74,20 @@ public String onSubmit(EhWebRequest req, Student student) { // ×Ô¶¯·â×°³ÉÊµÌå
 }
 ```
 
-Ğ§¹ûÍ¼£º
+æ•ˆæœå›¾ï¼š
 
 
-![É¨ÂëÏÂÔØ](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/student.png)
+![æ‰«ç ä¸‹è½½](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/student.png)
 
 
-## ³Ö¾Ã²ã
+## æŒä¹…å±‚
 
-### ÔöÉ¾¸Ä²éµÄ¼ò»¯ 
-°Ñ`Dao`ºÍ`Service`ºÏ²¢ÔÚÒ»Æğ£¬²¢ÇÒ²»Ğ´½Ó¿Ú
+### å¢åˆ æ”¹æŸ¥çš„ç®€åŒ– 
+æŠŠ`Dao`å’Œ`Service`åˆå¹¶åœ¨ä¸€èµ·ï¼Œå¹¶ä¸”ä¸å†™æ¥å£
 
 <br/>
 
-Ã¿¸ö`Service`¶¼ÓĞÔöÉ¾¸Ä²é£¬»¹ÓĞ`findAll()`Ö®ÀàµÄ·½·¨£¬ÄÇÃ´Ö»Òª½¨Ò»¸ö`BaseService`£¬ÊµÏÖÕâĞ©·½·¨£¬È»ºóÈÃÆäÓàService¼Ì³Ğ²»¾ÍºÃÁË¡£
+æ¯ä¸ª`Service`éƒ½æœ‰å¢åˆ æ”¹æŸ¥ï¼Œè¿˜æœ‰`findAll()`ä¹‹ç±»çš„æ–¹æ³•ï¼Œé‚£ä¹ˆåªè¦å»ºä¸€ä¸ª`BaseService`ï¼Œå®ç°è¿™äº›æ–¹æ³•ï¼Œç„¶åè®©å…¶ä½™Serviceç»§æ‰¿ä¸å°±å¥½äº†ã€‚
 
 <br/>
  
@@ -93,36 +95,36 @@ public String onSubmit(EhWebRequest req, Student student) { // ×Ô¶¯·â×°³ÉÊµÌå
  public class BookService extends BaseService<Book>
  ```
 
-### ·ÖÒ³µÄ¼ò»¯
+### åˆ†é¡µçš„ç®€åŒ–
 
-½«·ÖÒ³ËùĞèÒªµÄÈ«²¿Êı¾İ·â×°³É¶ÔÏó
+å°†åˆ†é¡µæ‰€éœ€è¦çš„å…¨éƒ¨æ•°æ®å°è£…æˆå¯¹è±¡
 ```
-// ·ÖÒ³Êı¾İ 
+// åˆ†é¡µæ•°æ® 
 public class Page {
 
-	private List recordList;    // Ò³ÖĞÊı¾İ          : ĞèÒª²éÑ¯Êı¾İ¿â
+	private List recordList;    // é¡µä¸­æ•°æ®          : éœ€è¦æŸ¥è¯¢æ•°æ®åº“
 
-	private long recordCount;   // Ò»¹²µÄÊı¾İÌõÊı	  : ĞèÒª²éÑ¯Êı¾İ¿â
+	private long recordCount;   // ä¸€å…±çš„æ•°æ®æ¡æ•°	  : éœ€è¦æŸ¥è¯¢æ•°æ®åº“
 	
-	private int pageSize;       // Ò»¹²µÄÊı¾İÌõÊı    £ºÖ¸¶¨
+	private int pageSize;       // ä¸€å…±çš„æ•°æ®æ¡æ•°    ï¼šæŒ‡å®š
 	
-	private int pageNo;         // Ò³ºÅ				 : Ö¸¶¨ 
+	private int pageNo;         // é¡µå·				 : æŒ‡å®š 
 
-	private int pageCount;      // Ò»¹²Ò³ÃæÊı		 £º= ceil(recordCount/pageSize)
+	private int pageCount;      // ä¸€å…±é¡µé¢æ•°		 ï¼š= ceil(recordCount/pageSize)
 
 	...
 }
 ```
  
 #### 1. sql/hql
-¼ÙÈçÔ­Ê¼µÄ`sql`ÊÇ`select uid, uname from user where uname like 'xxx' order by uname`
+å‡å¦‚åŸå§‹çš„`sql`æ˜¯`select uid, uname from user where uname like 'xxx' order by uname`
 </br>
-·ÖÒ³²éÑ¯`list`µÄ¿ÉÒÔÖ±½ÓÓÃ`jpa`µÄ`startFirstResult()`ºÍ`setMaxResults()`µÃµ½
+åˆ†é¡µæŸ¥è¯¢`list`çš„å¯ä»¥ç›´æ¥ç”¨`jpa`çš„`startFirstResult()`å’Œ`setMaxResults()`å¾—åˆ°
 <br/>
-²é¿´`count`½«`select`ºÍ`from`Ö®¼äµÄÄÚÈİÌæ»»Îª`count(*)`È¥µô`order by`±ã¿É£¬¼´Îª`select count(*) from user where uname like 'xxx'`
-Ğ§¹ûÈçÏÂ£¬
+æŸ¥çœ‹`count`å°†`select`å’Œ`from`ä¹‹é—´çš„å†…å®¹æ›¿æ¢ä¸º`count(*)`å»æ‰`order by`ä¾¿å¯ï¼Œå³ä¸º`select count(*) from user where uname like 'xxx'`
+æ•ˆæœå¦‚ä¸‹ï¼Œ
 ```
-// ²é·ÖÒ³Êı¾İÖ»ÓÃĞ´²élistµÄsql£¬²»ÓÃĞ´select count()µÄsqlÁË
+// æŸ¥åˆ†é¡µæ•°æ®åªç”¨å†™æŸ¥listçš„sqlï¼Œä¸ç”¨å†™select count()çš„sqläº†
 public Page findPage(int page_no, int page_size, String book_id, String book_name, String stu_id, String stu_name) {
 		PageQuery query = createPageQuery();
 		query.append("select t01.book_id, t02.book_name, t01.stu_id, t03.stu_name, t01.is_returned,"
@@ -138,8 +140,8 @@ public Page findPage(int page_no, int page_size, String book_id, String book_nam
 		return query.getPageBySql(page_no, page_size);
 	}
 ```
-#### 2.Criteria½Ó¿Ú
-ÏÈ²éÑ¯`count`ÔÙ²éÑ¯`list`ÒÑ·â×°ºÃ
+#### 2.Criteriaæ¥å£
+å…ˆæŸ¥è¯¢`count`å†æŸ¥è¯¢`list`å·²å°è£…å¥½
 ```
 public Page findPage(int page_no, int page_size, String stu_id, String stu_name) {
 	JPAQuery query = createJPAQuery();
@@ -150,24 +152,24 @@ public Page findPage(int page_no, int page_size, String stu_id, String stu_name)
 }
 ```
 
-## ÏµÍ³Ä£¿é
-¸øÓÃ»§·Ö½ÇÉ« - ½ÇÉ«·Ö²Ëµ¥ - ÊµÏÖ¶¯Ì¬²Ëµ¥
+## ç³»ç»Ÿæ¨¡å—
+ç»™ç”¨æˆ·åˆ†è§’è‰² - è§’è‰²åˆ†èœå• - å®ç°åŠ¨æ€èœå•
 
-## °²È«
-»ùÓÚshiroÊµÏÖÁË»ùÓÚÈ¨ÏŞµÄ¶Ô×ÊÔ´µÄÀ¹½ØºÍµ¥µãµÇÂ¼£¬¸Ğ¾õshiroÒª±Èspring securityÇ¿´ó
-¶øÇÒ°²È«À¹½ØÆ÷¶¯Ì¬¿ÉÅäÖÃ
+## å®‰å…¨
+åŸºäºshiroå®ç°äº†åŸºäºæƒé™çš„å¯¹èµ„æºçš„æ‹¦æˆªå’Œå•ç‚¹ç™»å½•ï¼Œæ„Ÿè§‰shiroè¦æ¯”spring securityå¼ºå¤§
+è€Œä¸”å®‰å…¨æ‹¦æˆªå™¨åŠ¨æ€å¯é…ç½®
 
-# ¼¼ÊõÑ¡ĞÍ
-Boostrap¡¢jQuery¡¢Freemarker¡¢Spring MVC¡¢JPA¡¢Shiro¡¢Ehcache
+# æŠ€æœ¯é€‰å‹
+Boostrapã€jQueryã€Freemarkerã€Spring MVCã€JPAã€Shiroã€Ehcache
 
-# ¶ÔËûÈË³É¹ûµÄ½è¼øºÍÊ¹ÓÃ
-°²È«Ä£¿é´óÌå¶¼À´×ÔÕÅ¿ªÌÎÏÈÉúµÄ¡¶¸úÎÒÑ§shiro¡·´úÂë
+# å¯¹ä»–äººæˆæœçš„å€Ÿé‰´å’Œä½¿ç”¨
+å®‰å…¨æ¨¡å—å¤§ä½“éƒ½æ¥è‡ªå¼ å¼€æ¶›å…ˆç”Ÿçš„ã€Šè·Ÿæˆ‘å­¦shiroã€‹ä»£ç 
 
-Ò³Ãæ²¼¾Ö·ç¸ñ²ÎÕÕJEESITE
+é¡µé¢å¸ƒå±€é£æ ¼å‚ç…§JEESITE
 
-# ½ØÍ¼
+# æˆªå›¾
 
-![É¨ÂëÏÂÔØ](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/home.png)
+![æ‰«ç ä¸‹è½½](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/home.png)
 
  
  
