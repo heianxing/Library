@@ -26,7 +26,7 @@
 
 部分组件使用源码和效果如下：
 
-![扫码下载](https://raw.githubusercontent.com/huyu516/Library/master/screenshorts/component.png)
+![扫码下载](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/component.png)
 
 
 ## 数据验证和封装
@@ -75,7 +75,7 @@ public String onSubmit(EhWebRequest req, Student student) { // 自动封装成实体
 效果图：
 
 
-![扫码下载](https://raw.githubusercontent.com/huyu516/Library/master/screenshorts/student.png)
+![扫码下载](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/student.png)
 
 
 ## 持久层
@@ -167,7 +167,7 @@ Boostrap、jQuery、Freemarker、Spring MVC、JPA、Shiro、Ehcache
 
 # 截图
 
-![扫码下载](https://raw.githubusercontent.com/huyu516/Library/master/screenshorts/home.png)
+![扫码下载](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/home.png)
 
  
  
