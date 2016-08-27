@@ -56,7 +56,7 @@ public class Student extends BaseEntity {
 后端无形之中已经调用了数据校验：
 ```
 @RequestMapping(value = ADD, method = RequestMethod.POST)
-public String onSubmit(EhWebRequest req, Student student) { // 自动封装成实体
+public String onSubmit(EhWebRequest req, Student student) { // 请求自动封装成实体student
 	if (req.hasBindErrors()) { // 执行到此处后台校验已经完毕，查看是否有错误
 		return FM_FTL;
 	}
@@ -96,11 +96,11 @@ public class Page {
 
 	private long recordCount;   // 一共的数据条数	 : 需要查询数据库
 	
-	private int pageSize;       // 一共的数据条数    : 指定
+	private int pageSize;       // 一共的数据条数     : 指定
 	
-	private int pageNo;         // 页号		 : 指定 
+	private int pageNo;         // 页号		      : 指定 
 
-	private int pageCount;      // 一共页面数        : = ceil(recordCount/pageSize)
+	private int pageCount;      // 一共页面数         : = ceil(recordCount/pageSize)
 
 	...
 }
