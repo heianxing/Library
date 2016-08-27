@@ -7,41 +7,33 @@
 演示地址请参见我的简历，组件说明请单击主页上方**框架示例**
 
 # 框架介绍
-1. 吸收了Tapestry和Spring MVC的优点，封装了大量组件
-2. 重写了数据校验，使前后端验证统一
-3. 重写了数据转化和数据绑定
-4. 实现了安全机制：单点登录和全县拦截
+1. 吸收了`Tapestry`和`Spring MVC`的优点，封装了大量组件
+2. 重写了数据校验，使前后端数据校验统一
+3. 重写了数据类型转换和数据绑定
+4. 实现了安全机制：单点登录(默认未开启)和权限拦截
 5. 实现了系统模块：用户、角色、菜单、配置、字典...
 
 # 说明
 
 ## 前端
 `Tapestry`是一个前端强大组件式框架，核心思想是组件和事件
+
 `Spring MVC`是最前最火热的前端请求响应式框架
 
-<br/>
-
-我前端的设计思想就是结合二者优点，基于`Freemarker`封装了很多组件，
-并且重写了数据验证和封装，目的是：**用尽量少的代码干更多的事**
-
-<br/>
+我前端的设计思想就是结合二者优点，基于`Freemarker`封装了很多组件，**用很少的代码干了更多的事**
 
 部分组件使用源码和效果如下：
 
 ![扫码下载](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/component.png)
 
-
 ## 数据验证和封装
-验证分为前端`JS`验证和后端`Java`验证
-一般前端验证用`jquery validate`，后端验证用`Hiberntae`的注解来实现
+验证分为前端`JS`验证和后端`Java`验证，一般前端验证用`jquery validate`，后端验证用`Hiberntae`的注解来实现，虽然表单的验证规则都相同，但是仍然要写两遍
 
-<br/>
 
-虽然表单的验证规则都相同，但是仍然要写两遍，我的目的是：**使前端和后端验证二者统一，只用在实体上配置注解，则框架自动去执行前端和后端校验**
+所以，我采用了**将前端和后端数据校验统一，在实体上配置注解，则框架自动去执行前端和后端数据校验**
 
-<br/>
 
-代码如下:
+验证规则在实体属性上配置，代码如下:
 ```
 @Entity
 @Table(name = "a_student")
@@ -61,6 +53,7 @@ public class Student extends BaseEntity {
 	...
 	
 ```
+后端无形之中已经调用了数据校验：
 ```
 @RequestMapping(value = ADD, method = RequestMethod.POST)
 public String onSubmit(EhWebRequest req, Student student) { // 自动封装成实体
@@ -74,8 +67,7 @@ public String onSubmit(EhWebRequest req, Student student) { // 自动封装成�
 }
 ```
 
-效果图：
-
+实体属性上的验证规则会发到前端，执行数据校验：
 
 ![扫码下载](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/student.png)
 
