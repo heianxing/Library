@@ -159,6 +159,8 @@ Boostrap、jQuery、Freemarker、Spring MVC、JPA、Shiro、Ehcache
 
 页面布局风格参照JEESITE
 
+分页`Grid`中的贴图来自某`JS`框架，年代久远，实在忘了
+
 # 截图
 
 ![扫码下载](https://raw.githubusercontent.com/huyu516/Library/master/screenshots/home.png)
