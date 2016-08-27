@@ -98,9 +98,9 @@ public class Page {
 	
 	private int pageSize;       // 一共的数据条数     : 指定
 	
-	private int pageNo;         // 页号		      : 指定 
+	private int pageNo;         // 页号		       : 指定 
 
-	private int pageCount;      // 一共页面数         : = ceil(recordCount/pageSize)
+	private int pageCount;      // 一共页面数        : = ceil(recordCount/pageSize)
 
 	...
 }
@@ -108,13 +108,14 @@ public class Page {
  
 #### 1. sql/hql
 假如原始的`sql`是`select uid, uname from user where uname like 'xxx' order by uname`
-</br>
+
 分页查询`list`的可以直接用`jpa`的`startFirstResult()`和`setMaxResults()`得到
-<br/>
-查看`count`将`select`和`from`之间的内容替换为`count(*)`去掉`order by`便可，即为`select count(*) from user where uname like 'xxx'`
-效果如下，
+
+查询`count`的`sql`是将`select`和`from`之间的内容替换为`count(*)`去掉`order by`便可，即为`select count(*) from user where uname like 'xxx'`
+
+代码如下：
 ```
-// 查分页数据只用写查list的sql，不用写select count()的sql了
+// 查分页数据只用写查list的sql，不用写select count(*)的sql了
 public Page findPage(int page_no, int page_size, String book_id, String book_name, String stu_id, String stu_name) {
 		PageQuery query = createPageQuery();
 		query.append("select t01.book_id, t02.book_name, t01.stu_id, t03.stu_name, t01.is_returned,"
@@ -130,6 +131,7 @@ public Page findPage(int page_no, int page_size, String book_id, String book_nam
 		return query.getPageBySql(page_no, page_size);
 	}
 ```
+
 #### 2.Criteria接口
 先查询`count`再查询`list`已封装好
 ```
@@ -143,11 +145,11 @@ public Page findPage(int page_no, int page_size, String stu_id, String stu_name)
 ```
 
 ## 系统模块
-给用户分角色 - 角色分菜单 - 实现动态菜单
+给用户分角色，角色分菜单，实现了从用户到菜单的动态配置
+增加了配置管理模块，并使用了`Ehcache`缓存
 
 ## 安全
-基于shiro实现了基于权限的对资源的拦截和单点登录，感觉shiro要比spring security强大
-而且安全拦截器动态可配置
+基于shiro实现了基于权限的对资源的拦截和单点登录，而且安全拦截器动态可配置
 
 # 技术选型
 Boostrap、jQuery、Freemarker、Spring MVC、JPA、Shiro、Ehcache
