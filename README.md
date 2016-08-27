@@ -77,13 +77,11 @@ public String onSubmit(EhWebRequest req, Student student) { // 自动封装成�
 ### 增删改查的简化 
 把`Dao`和`Service`合并在一起，并且不写接口
 
-<br/>
-
 每个`Service`都有增删改查，还有`findAll()`之类的方法，那么只要建一个`BaseService`，实现这些方法，然后让其余Service继承不就好了。
 
-<br/>
- 
+代码如下：
  ```
+ // 继承一下就有了增删改查等方法
  public class BookService extends BaseService<Book>
  ```
 
@@ -96,13 +94,13 @@ public class Page {
 
 	private List recordList;    // 页中数据          : 需要查询数据库
 
-	private long recordCount;   // 一共的数据条数	  : 需要查询数据库
+	private long recordCount;   // 一共的数据条数	 : 需要查询数据库
 	
-	private int pageSize;       // 一共的数据条数    ：指定
+	private int pageSize;       // 一共的数据条数    : 指定
 	
-	private int pageNo;         // 页号				 : 指定 
+	private int pageNo;         // 页号		 : 指定 
 
-	private int pageCount;      // 一共页面数		 ：= ceil(recordCount/pageSize)
+	private int pageCount;      // 一共页面数        : = ceil(recordCount/pageSize)
 
 	...
 }
