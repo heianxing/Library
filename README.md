@@ -133,7 +133,7 @@ public Page findPage(int page_no, int page_size, String book_id, String book_nam
 ```
 
 #### 2.Criteria
-使用`Criteria`来构造查询，先查询`count`再查询`list`已封装好，但是不能用联查，只能用单表
+使用`Criteria`来构造查询，先查询`count`再查询`list`已封装好，但是不能多表联查，只能查询单表
 ```
 public Page findPage(int page_no, int page_size, String stu_id, String stu_name) {
 	JPAQuery query = createJPAQuery();
