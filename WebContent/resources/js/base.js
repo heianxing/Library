@@ -62,7 +62,7 @@ String.prototype.trim
     	}
 
 // 常量
-var Consts = new Object();
+var Consts = {};
 	// 表单提交前触发的事件，通知某些复杂的表单宏是将数据写回到隐藏域
 	Consts.FORM_PREPARE_FOR_SUBMIT_EVENT = "formPrepareForSubmitEvent";
 	// 表单数据校验事件，通知表单中的宏进行数据校验，如果有错误，会弹出浮动提示框
@@ -84,7 +84,7 @@ var Consts = new Object();
 	// 项目名称
 	Consts.CONTEXT_PATH = "/Library";
 
-var Validator = new Object();
+var Validator = {};
 
 	Validator.validateRules
 		= function(fieldVal, rulesStr) {
@@ -236,7 +236,7 @@ var Validator = new Object();
 				})
 			}
 
-var FieldValiateManager = new Object();
+var FieldValiateManager = {};
 
 	FieldValiateManager.validate
 		= function(fieldName, formId, getValFunc, getValParam, errorMsgPlace) {
@@ -303,7 +303,7 @@ var FieldValiateManager = new Object();
 			    });
 			}
 
-var Commons = new Object();
+var Commons = {};
 
 	Commons.getValueById
 		= function(eleId) {
@@ -376,7 +376,7 @@ var Commons = new Object();
 				}
 			}
 
-var Page = new Object();
+var Page = {};
 
 	Page.del
 		= function(url, delId, tip) {
@@ -391,7 +391,7 @@ var Page = new Object();
 				})
 			}
 
-var Template = new Object();
+var Template = {};
 
 	Template.selectLinkage
 		= function(orginId, referTo, ajaxUrl, txt, val, blankLabel, blankValue) {
@@ -496,7 +496,7 @@ var Template = new Object();
 				)
 			}
 
-var Dialog = new Object();
+var Dialog = {};
 
 	Dialog.alert = function(msg) {
 		this._tip("alert", msg);
