@@ -111,7 +111,7 @@ public class Page {
 
 分页查询`list`的可以直接用`jpa`的`startFirstResult()`和`setMaxResults()`得到
 
-查询`count`的`sql`是将`select`和`from`之间的内容替换为`count(*)`去掉`order by`便可，即为`select count(*) from user where uname like 'xxx'`
+查询`count`的`sql`是将`select`和`from`之间的内容替换为`count(*)`去掉并且`order by`便可，即为`select count(*) from user where uname like 'xxx'`
 
 代码如下：
 ```
